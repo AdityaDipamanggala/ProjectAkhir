@@ -9,7 +9,6 @@ class Controller {
            }]
        })
        .then (data => {
-           let credits = 0
         //    res.send(data)
            res.render(`studentsList`,{
            data,
@@ -34,10 +33,15 @@ class Controller {
         })
         .then (data => {
             // res.send(data)
-            res.render(`studentSubjects`,{
-                data,
-                getFullName : Helper.getFullName
+            Student.findAll({where : { id : req.params.id}})
+            .then (dataStudent => {
+                res.render(`studentSubjects`,{
+                    dataStudent,
+                    data,
+                    getFullName : Helper.getFullName
+                })
             })
+            .catch (err => {res.send(err)})
         })
         .catch (err => res.send(err)) 
     }

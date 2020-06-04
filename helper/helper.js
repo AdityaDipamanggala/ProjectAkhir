@@ -1,3 +1,4 @@
+const nodemailer = require('nodemailer');
 class Helper {
 
     static getFullName (firstName,lastName) {
@@ -12,6 +13,30 @@ class Helper {
             } 
         }
         return total
+    }
+
+    static sendEmail (subject,message) {
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth : {
+                user: 'mahasiswa.rajin2020@gmail.com',
+                pass: 'aditlianda123'
+            }
+        })
+        let mailOption = {
+            from: 'mahasiswa.rajin2020@gmail.com',
+            to: data.email,
+            subject: subject,
+            text: message
+        }
+        transporter.sendMail(mailOption, (err, data)=>{
+            if(err){
+                console.log(err)
+            }else {
+                console.log('email sent')
+            }
+        })   
+    
     }
 }
 
