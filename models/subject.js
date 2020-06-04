@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const {Model} = sequelize.sequelize
+  const {Model} = sequelize.Sequelize
   class Subject extends Model {}
   Subject.init({
     name: DataTypes.STRING,
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   })
   
   Subject.associate = function(models) {
-    Subject.belongsToMany(models.Students,{through : `StudentSubjects`})
+    Subject.belongsToMany(models.Student,{through : `StudentSubjects`})
   };
   return Subject;
 };

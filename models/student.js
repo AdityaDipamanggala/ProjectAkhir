@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     ipk: DataTypes.FLOAT},
     {sequelize})
   Student.associate = function(models) {
-    Students.belongsToMany(models.Students,{through : `StudentSubjects`})
+    Student.belongsToMany(models.Subject,{through : `StudentSubjects`})
   };
   return Student;
 };

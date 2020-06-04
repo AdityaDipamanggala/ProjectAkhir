@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
   })
   
   StudentSubject.associate = function(models) {
-    StudentSubject.belongsTo(models.Students)
-    StudentSubject.belongsTo(models.Subjects)
+    StudentSubject.belongsTo(models.Student)
+    StudentSubject.belongsTo(models.Subject)
   };
   return StudentSubject;
 };
