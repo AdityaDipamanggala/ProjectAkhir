@@ -10,7 +10,7 @@
     <a href="/students/<%=dataStudent.id%>/subjects">Back to Student's Subject List</a><br><br>
     <form action="/students/<%=dataStudent.id%>/subject/add" method="POST">
         <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" value="<%=getFullName(dataStudent.firstName,dataStudent.lastName)%>"><br><br>
+        <input type="text" id="name" name="name" value="<%=getFullName(dataStudent.firstName,dataStudent.lastName)%>" readonly><br><br>
         <label for="subjects">Subjects:</label><br>
         <select id="subjects" name="subjects">
             <%for (let i = 0 ; i < dataSubject.length ; i++){%>

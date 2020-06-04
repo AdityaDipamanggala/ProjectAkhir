@@ -25,7 +25,7 @@ class Helper {
         })
         let mailOption = {
             from: 'mahasiswa.rajin2020@gmail.com',
-            to: data.email,
+            to: 'mahasiswa.rajin2020@gmail.com',
             subject: subject,
             text: message
         }
