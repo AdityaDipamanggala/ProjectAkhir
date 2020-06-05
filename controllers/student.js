@@ -14,7 +14,7 @@ class Controller {
         .then(profil => {
             res.render(`studentsListBoots`,{
                 data,
-                getFullName : Helper.getFullName,
+                // getFullName : Helper.getFullName,
                 totalCredit : Helper.totalCredit,
                 profil
              })
@@ -48,7 +48,7 @@ class Controller {
                     profil,
                     dataStudent,
                     data,
-                    getFullName : Helper.getFullName,
+                    // getFullName : Helper.getFullName,
                     msg : msg || ``
                 })
                 })
@@ -70,7 +70,9 @@ class Controller {
             Subject.findAll()
             .then (dataSubject => {
                 // res.send(dataStudent)
-                res.render(`formAdd`,{dataStudent,dataSubject, getFullName : Helper.getFullName})
+                res.render(`formAdd`,{dataStudent,dataSubject
+                    // , getFullName : Helper.getFullName
+                })
             })
             .catch (err => res.send(err))
         })

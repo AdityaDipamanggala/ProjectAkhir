@@ -45,7 +45,7 @@
         <tbody>
             <%for (let i = 0 ; i < data.length ; i++){%>
             <tr>
-                <th scope="row"><%= getFullName(data[i].firstName,data[i].lastName) %></th>
+                <th scope="row"><%= data[i].fullName() %></th>
                 <td><%= data[i].email%></td>
                 <td><%= data[i].ipk%></td>
                 <td><%= totalCredit(data[i])%></td>

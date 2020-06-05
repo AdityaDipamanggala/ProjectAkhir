@@ -3,7 +3,13 @@ const bcrypt = require('bcrypt');
 
 module.exports = (sequelize, DataTypes) => {
   const {Model} = sequelize.Sequelize
-  class Student extends Model {}
+  class Student extends Model {
+
+    fullName () {
+        return this.firstName + ` ` + this.lastName
+    }
+
+  }
   Student.init({ firstName: {
     type: DataTypes.STRING,
     validate: {

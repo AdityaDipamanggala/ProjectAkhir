@@ -34,7 +34,7 @@
     </thead>
     <% if (data.length > 0){ %>
     <span class="badge badge-info" style="width: 100%">
-        <h2>Name: <%= getFullName(data[0].Student.firstName,data[0].Student.lastName) %></h2>
+        <h2>Name: <%= data[0].Student.fullName() %></h2>
     </span>
     <span class="badge badge-info" style="width: 100%">
         <h2>IPK: <%= data[0].Student.ipk %></h2>

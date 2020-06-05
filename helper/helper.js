@@ -1,10 +1,6 @@
 const nodemailer = require('nodemailer');
 class Helper {
 
-    static getFullName (firstName,lastName) {
-        return firstName + ` ` + lastName
-    }
-
     static totalCredit (data) {
         let total = 0 
         if (data.Subjects.length > 0){
